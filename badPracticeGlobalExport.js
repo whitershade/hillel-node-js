@@ -1,3 +1,3 @@
 "use strict";
 
-global.HELLO = "Hello world";
+global.badPractice = "bad practice";
