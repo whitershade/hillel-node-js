@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/whitershade/hillel-node-js/issues"
   },
-  "homepage": "https://github.com/whitershade/hillel-node-js#readme"
+  "homepage": "https://github.com/whitershade/hillel-node-js#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.10.0"
+  }
 }
