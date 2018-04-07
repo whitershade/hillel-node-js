@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lesson1": "node ./lesson1/index.js",
-    "inspect": "node --inspect --inspect-brk ./index.js"
+    "lesson1": "cross-env node ./lesson1/index.js",
+    "hometask1":
+      "cross-env node ./hometask1/index.js --globalExport=\"Amma global!\" --exportByDefault=\"I was exported as default\" --severalExports=\"I was exported as just one of module methods\"",
+    "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +21,14 @@
   },
   "homepage": "https://github.com/whitershade/hillel-node-js#readme",
   "devDependencies": {
+    "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.10.0"
+  },
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "lodash": "^4.17.5",
+    "minimist": "^1.2.0"
   }
 }
