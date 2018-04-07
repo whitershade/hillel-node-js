@@ -1,3 +1,1 @@
-"use strict";
-
-global.badPractice = "bad practice";
+global.badPractice = 'bad practice';

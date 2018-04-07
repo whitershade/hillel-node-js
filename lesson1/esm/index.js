@@ -5,8 +5,7 @@
     console.log(result);
     console.log(result.default.name);
     console.log(module);
-  }
-  catch(error) {
+  } catch (error) {
     console.log(error);
   }
 })();
