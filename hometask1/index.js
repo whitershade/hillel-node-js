@@ -5,6 +5,7 @@ const {
   sayHello: sayHelloFromExports,
   sayGoodbye: sayGoodbyeFromExports,
 } = require('./modules/exports');
+const nodeEnvMonitor = require('./modules/nodeEnvMonitor');
 
 const consoleLog = require('./utils/consoleLog');
 
@@ -12,3 +13,4 @@ consoleLog(global.sayHello(globalExport), 'red');
 consoleLog(helloFromExportByDefault(exportByDefault), 'purple');
 consoleLog(sayHelloFromExports(severalExports), 'yellow');
 consoleLog(sayGoodbyeFromExports(severalExports), 'yellow');
+consoleLog(nodeEnvMonitor);
