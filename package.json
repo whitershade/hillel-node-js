@@ -8,6 +8,7 @@
     "lesson1": "cross-env node ./lesson1/index.js",
     "hometask1":
       "cross-env NODE_ENV=production node ./hometask1/index.js --globalExport=\"Amma global!\" --exportByDefault=\"I was exported as default\" --severalExports=\"I was exported as just one of module methods\"",
+    "hometask2": "cross-env node ./hometask2/",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
