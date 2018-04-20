@@ -15,3 +15,11 @@ Simple project whitch uses different ways to export modules with Node.js, parses
 1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
 1. Install dependencies with `npm i`
 1. To run project use `npm run hometask1`
+
+### Hometask 2
+Simple project whitch uses Node.js events and listeners.
+
+##### How to start
+1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
+1. Install dependencies with `npm i`
+1. To run project use `npm run hometask2`
