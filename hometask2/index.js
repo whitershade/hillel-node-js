@@ -1,8 +1,7 @@
-const events = require('events');
-const { last, sumBy, filter } = require('lodash');
+const { EventEmitter } = require('events');
 const consoleLog = require('../hometask1/utils/consoleLog');
 
-class Student extends events {
+class Student extends EventEmitter {
   constructor(name = '', surname = '', yearOfBirth = 0) {
     super();
     process.nextTick(() => this.emit('created'));
@@ -10,7 +9,7 @@ class Student extends events {
     this.name = name;
     this.surname = surname;
     this.yearOfBirth = yearOfBirth;
-    this.attendanceAndGrades = [];
+    this.attendanceAndGrades = Array(12);
 
     this.setUpListeners();
     this.checkIfOuterListenersExist();
@@ -27,16 +26,28 @@ class Student extends events {
   listenOnceToGetAge() {
     const age = new Date().getFullYear() - this.yearOfBirth;
 
-    this.once('userAge', callback => callback(age));
+    this.once('getUserAge', () => this.emit('userAge', age));
   }
 
   listenToSetPresent() {
-    this.on('present', isPresent => this.attendanceAndGrades.push({ isPresent }));
+    this.on('present', (isPresent) => {
+      const indexOfFirstUnattended = this.attendanceAndGrades.findIndex(attendance => attendance === undefined);
+
+      if (indexOfFirstUnattended === -1) throw new Error('Attendance list is full');
+
+      this.attendanceAndGrades[indexOfFirstUnattended] = { isPresent };
+    });
   }
 
   listenToSetPoint() {
     this.on('point', (point) => {
-      last(this.attendanceAndGrades).point = point;
+      const lastIndexOfAttended = this.attendanceAndGrades
+        .reverse()
+        .findIndex(attendance => attendance !== undefined);
+
+      if (lastIndexOfAttended === -1) throw new Error('No attendance provided to add point');
+
+      this.attendanceAndGrades[lastIndexOfAttended].point = point;
     });
   }
 
@@ -49,14 +60,21 @@ class Student extends events {
   }
 
   getAveragePoint() {
-    const points = filter(this.attendanceAndGrades, 'point');
-    const countOfPoint = points.length;
+    const { total: totalGrade, count: countOfGrades } = this.attendanceAndGrades.reduce(
+      (result, { point }) => {
+        if (point !== 0 && !point) return result;
 
-    if (countOfPoint === 0) return 0;
+        return {
+          total: result.total + point,
+          count: result.count + 1,
+        };
+      },
+      { total: 0, count: 0 },
+    );
 
-    const sumOfPoint = sumBy(points, 'point');
+    if (countOfGrades === 0) return 0;
 
-    return Number((sumOfPoint / countOfPoint).toFixed(2));
+    return Number((totalGrade / countOfGrades).toFixed(2));
   }
 
   getMaxPoint() {
@@ -82,7 +100,9 @@ firstStudent.on('created', () => {
   consoleLog('created first student');
 
   // some bullshit for testing
-  firstStudent.emit('userAge', log('user age is:'));
+  firstStudent.on('userAge', log('Student age is:'));
+  firstStudent.emit('getUserAge');
+  firstStudent.emit('getUserAge');
   firstStudent.emit('present', true);
   firstStudent.emit('present', true);
   firstStudent.emit('point', 5);
