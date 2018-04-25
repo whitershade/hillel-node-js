@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lesson1": "cross-env node ./lesson1/index.js",
-    "hometask1":
-      "cross-env NODE_ENV=production node ./hometask1/index.js --globalExport=\"Amma global!\" --exportByDefault=\"I was exported as default\" --severalExports=\"I was exported as just one of module methods\"",
+    "hometask1": "cross-env NODE_ENV=production node ./hometask1/index.js --globalExport=\"Amma global!\" --exportByDefault=\"I was exported as default\" --severalExports=\"I was exported as just one of module methods\"",
     "hometask2": "cross-env node ./hometask2/",
+    "hometask3": "cross-env node ./hometask3/",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
@@ -29,7 +29,10 @@
   },
   "dependencies": {
     "chalk": "^2.3.2",
+    "easy-table": "^1.1.1",
+    "file-type": "^7.6.0",
     "lodash": "^4.17.5",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "read-chunk": "^2.1.0"
   }
 }
