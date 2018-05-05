@@ -52,4 +52,4 @@ server.on('request', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => global.console.log(`Server started on: localhost/${PORT}`));
+server.listen(PORT, () => global.console.log(`Server started on localhost:${PORT}`));
