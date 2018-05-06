@@ -48,6 +48,8 @@ server.on('request', (req, res) => {
       if (typeof readFileStream.destroy === 'function') readFileStream.destroy();
       writeTable(startTime, 'Closed');
     });
+  } else {
+    res.end();
   }
 });
 
