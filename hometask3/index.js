@@ -8,8 +8,8 @@ const RequestLogger = require('./utils/RequestLogger');
 
 const fileName = 'kitten.jpg';
 const filePath = path.join(__dirname, fileName);
-const fileLogPath = path.join(__dirname, 'logs/file.txt');
-const requestsLogPath = path.join(__dirname, 'logs/requests.txt');
+const fileLogPath = path.join(__dirname, 'logs', 'file.txt');
+const requestsLogPath = path.join(__dirname, 'logs', 'requests.txt');
 
 const server = new http.Server();
 
