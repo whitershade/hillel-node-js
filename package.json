@@ -9,6 +9,7 @@
     "hometask1": "cross-env NODE_ENV=production node ./hometask1/index.js --globalExport=\"Amma global!\" --exportByDefault=\"I was exported as default\" --severalExports=\"I was exported as just one of module methods\"",
     "hometask2": "cross-env node ./hometask2/",
     "hometask3": "cross-env node ./hometask3/",
+    "hometask4": "cross-env nodemon ./hometask4/",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
@@ -25,7 +26,8 @@
     "cross-env": "^5.1.4",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.10.0"
+    "eslint-plugin-import": "^2.10.0",
+    "nodemon": "^1.17.4"
   },
   "dependencies": {
     "chalk": "^2.3.2",
