@@ -37,3 +37,18 @@ Every minute, write to the log file the number of requests that came to the serv
 
 ##### NOTE:
 Folder logs with log files commited just to easy check сorrectness of homework.
+
+### Hometask 3
+Learn how to create a web server using the http module.
+Make a universal web server so that it can:
+
+Return a html page;
+Accept the POST request and store the received data in memory
+Return a JSON object or an array of objects that it has stored in memory, depending on the parameters that came to the router.
+Return a few pictures of different extensions with the correct 'content-type' using the stream
+Log the time of the request, the response, the amount of time spent, the user-agent and the status code.
+
+##### How to start
+1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
+1. Install dependencies with `npm i`
+1. To run project use `npm run hometask4`
