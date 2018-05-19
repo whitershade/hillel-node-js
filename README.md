@@ -52,3 +52,17 @@ Log the time of the request, the response, the amount of time spent, the user-ag
 1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
 1. Install dependencies with `npm i`
 1. To run project use `npm run hometask4`
+
+### Hometask 5
+Learn how to create a web server using the express module.
+Make a universal web server so that it can:
+
+Return html page;
+Return pictures using the stream;
+Use middlewares written by the student for logging the time of the request, the response, the amount of time spent, the user-agent and the status code.
+Processed the absence of a file (picture) using middlewares and return to the client a unified response.
+
+##### How to start
+1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
+1. Install dependencies with `npm i`
+1. To run project use `npm run hometask5`
