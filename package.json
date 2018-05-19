@@ -10,6 +10,7 @@
     "hometask2": "cross-env node ./hometask2/",
     "hometask3": "cross-env node ./hometask3/",
     "hometask4": "cross-env nodemon ./hometask4/",
+    "hometask5": "cross-env nodemon ./hometask5/",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
@@ -32,9 +33,11 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "easy-table": "^1.1.1",
+    "express": "^4.16.3",
     "file-type": "^7.6.0",
     "lodash": "^4.17.5",
     "minimist": "^1.2.0",
-    "read-chunk": "^2.1.0"
+    "read-chunk": "^2.1.0",
+    "serve-favicon": "^2.5.0"
   }
 }
