@@ -38,7 +38,7 @@ Every minute, write to the log file the number of requests that came to the serv
 ##### NOTE:
 Folder logs with log files commited just to easy check сorrectness of homework.
 
-### Hometask 3
+### Hometask 4
 Learn how to create a web server using the http module.
 Make a universal web server so that it can:
 
