@@ -1,0 +1,10 @@
+<% const links = [
+  { link: '/', text: 'Home' },
+  { link: '/images', text: 'Images' }
+] %>
+
+<menu class="header-menu">
+  <% links.forEach(({ link, text }) => { %>
+    <%- include('menu-item', { link, text }); %>
+  <% }); %>
+</menu>
