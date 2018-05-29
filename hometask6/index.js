@@ -6,7 +6,6 @@ const expressLayouts = require('express-ejs-layouts');
 
 const router = require('./routes');
 
-
 const app = express();
 app.use(sassMiddleware({
   src: path.join(__dirname, 'views', 'styles'),

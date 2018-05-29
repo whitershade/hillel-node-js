@@ -1,5 +1,9 @@
 .header {
   background-color: $header-bg-color;
+
+  max-width: $container-width;
+
+  margin: 0 auto;
 }
 
 .header-menu {

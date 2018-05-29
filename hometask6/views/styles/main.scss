@@ -1,6 +1,7 @@
 @import 'variables';
 @import 'header';
 @import 'footer';
+@import 'galery';
 
 body,
 html {
@@ -9,6 +10,7 @@ html {
 }
 
 body {
+  text-align: center;
   display: grid;
 
   margin: 0;
@@ -24,5 +26,10 @@ body {
 
 .container {
   max-width: $container-width;
+  padding: $container-padding;
   margin: 0 auto;
+}
+
+.main {
+  padding-bottom: 10px;
 }
