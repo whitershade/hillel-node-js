@@ -1,0 +1,20 @@
+<%- contentFor('body') %>
+
+<form
+  method="post"
+  action="/messages"
+  class="add-new-message-form"
+  enctype="application/x-www-form-urlencoded"
+>
+  <label>
+    Name
+    <input class="add-new-message-form__input" type="text" name="user">
+  </label>
+
+  <label>
+    Message
+    <input class="add-new-message-form__input" type="text" name="message">
+  </label>
+
+  <button>Send</button>
+</form

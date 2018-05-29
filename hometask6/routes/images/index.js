@@ -3,7 +3,8 @@ const path = require('path');
 const fs = require('fs');
 
 const router = express.Router();
-const folder = path.join(__dirname, '..', 'views', 'assets', 'images');
+const folder = path.join(__dirname, '..', '..', 'views', 'assets', 'images');
+
 
 router
   .get('/', (req, res) => {
