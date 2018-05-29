@@ -8,7 +8,7 @@ const expressLayouts = require('express-ejs-layouts');
 const router = require('./routes');
 const middlewares = require('./middlewares');
 
-require('./utils/clearOutdatedMessages');
+// require('./utils/clearOutdatedMessages');
 
 const app = express();
 app.use(express.json());

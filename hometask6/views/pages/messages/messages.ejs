@@ -2,10 +2,9 @@
 
 <h1>Messages</h1>
 
+<a href="/messages/new">Add new message</a>
 <ul class="messages">
   <% messages.forEach(({ createdAt, user, message }) => { %>
     <%- include('message', { createdAt, user, message }); %>
   <% }); %>
 </ul>
-
-<a href="/messages/new">Add new message</a>

@@ -1,0 +1,10 @@
+<%- contentFor('body') %>
+
+<a href="/messages/get-json-messages">Get All Mesages</a>
+
+<form type="GET" action="/messages/get-json-message">
+  <input type="text" name="user" value="alex">
+  <input type="text" name="message" value="message">
+  <input type="text" name="show" value="30">
+  <button>Get Message by field</button>
+</form>
