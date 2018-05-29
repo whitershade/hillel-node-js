@@ -24,14 +24,19 @@ router
     res.render('pages/messages/add-new-message');
   })
   .post('/', (req, res) => {
+    const { user = '', message = '', endAt } = req.body;
+
     fs.readFile(messagesPath, 'utf8', (error, data) => {
       if (error) sendError(res, error);
 
-      const { user = '', message = '' } = req.body;
-
       try {
         const messages = JSON.parse(data);
-        messages.push({ addedAt: '1', user, message });
+        messages.push({
+          addedAt: Date.now(),
+          user,
+          message,
+          endAt,
+        });
 
         const json = JSON.stringify(messages);
         fs.writeFile(messagesPath, json, 'utf8', () => res.redirect('/messages'));
