@@ -4,8 +4,11 @@ const path = require('path');
 const sassMiddleware = require('node-sass-middleware');
 const expressLayouts = require('express-ejs-layouts');
 
+
 const router = require('./routes');
 const middlewares = require('./middlewares');
+
+require('./utils/clearOutdatedMessages');
 
 const app = express();
 app.use(express.json());
