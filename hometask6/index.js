@@ -4,7 +4,6 @@ const path = require('path');
 const sassMiddleware = require('node-sass-middleware');
 const expressLayouts = require('express-ejs-layouts');
 
-
 const router = require('./routes');
 const middlewares = require('./middlewares');
 
@@ -25,9 +24,9 @@ app.use(expressLayouts);
 app.set('views', path.join(__dirname, 'views'));
 app.use(favicon(path.join(__dirname, 'views', 'assets', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'views')));
+app.locals.dataPath = path.join(__dirname, 'data', 'messages.json');
 app.use(middlewares);
 app.use(router);
-app.all('/*', (req, res) => res.sendStatus(404));
 
 
 const PORT = process.env.PORT || 3000;
