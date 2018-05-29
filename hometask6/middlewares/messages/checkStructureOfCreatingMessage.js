@@ -1,4 +1,4 @@
-const checkStructureOfCreatingMessage = (req, res, next) => {
+module.exports = (req, res, next) => {
   if (req.method !== 'POST') return next();
 
   const { user, message, show } = req.body;
@@ -36,6 +36,3 @@ const checkStructureOfCreatingMessage = (req, res, next) => {
       next();
   }
 };
-
-
-module.exports = checkStructureOfCreatingMessage;

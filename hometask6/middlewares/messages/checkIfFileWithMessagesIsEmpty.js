@@ -1,15 +1,14 @@
 const fs = require('fs');
-const path = require('path');
-
-const messagesPath = path.join(__dirname, '..', '..', 'data', 'messages.json');
 
 
-const checkIfFileWithMessagesIsEmpty = (req, res, next) => {
-  fs.stat(messagesPath, (error, { size }) => {
+module.exports = (req, res, next) => {
+  const { app: { locals: { dataPath } } } = req;
+
+  fs.stat(dataPath, (error, { size }) => {
     if (error) return next(error);
 
     if (size === 0) {
-      fs.writeFile(messagesPath, '[]', 'utf8', (err) => {
+      fs.writeFile(dataPath, '[]', 'utf8', (err) => {
         if (err) return next(err);
 
         next();
@@ -19,6 +18,3 @@ const checkIfFileWithMessagesIsEmpty = (req, res, next) => {
     }
   });
 };
-
-
-module.exports = checkIfFileWithMessagesIsEmpty;

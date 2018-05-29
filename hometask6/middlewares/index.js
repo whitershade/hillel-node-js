@@ -3,12 +3,9 @@ const checkIfFileWithMessagesExists = require('./messages/checkIfFileWithMessage
 const checkIfFileWithMessagesIsEmpty = require('./messages/checkIfFileWithMessagesIsEmpty');
 const checkStructureOfCreatingMessage = require('./messages/checkStructureOfCreatingMessage');
 
-
 const router = express.Router();
 
-router.use('/messages', checkIfFileWithMessagesExists);
-router.use('/messages', checkIfFileWithMessagesIsEmpty);
-router.use('/messages', checkStructureOfCreatingMessage);
-
-
-module.exports = router;
+module.exports = router
+  .use('/messages', checkIfFileWithMessagesExists)
+  .use('/messages', checkIfFileWithMessagesIsEmpty)
+  .use('/messages', checkStructureOfCreatingMessage);

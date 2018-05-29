@@ -1,13 +1,11 @@
 const fs = require('fs');
-const path = require('path');
 
-const messagesPath = path.join(__dirname, '..', '..', 'data', 'messages.json');
+module.exports = (req, res, next) => {
+  const { app: { locals: { dataPath } } } = req;
 
-
-const checkIfFileWithMessagesExists = (req, res, next) => {
-  fs.exists(messagesPath, (exists) => {
+  fs.exists(dataPath, (exists) => {
     if (!exists) {
-      fs.writeFile(messagesPath, '', (err) => {
+      fs.writeFile(dataPath, '', (err) => {
         if (err) return next(err);
 
         next();
@@ -17,6 +15,3 @@ const checkIfFileWithMessagesExists = (req, res, next) => {
     }
   });
 };
-
-
-module.exports = checkIfFileWithMessagesExists;
