@@ -14,8 +14,8 @@ module.exports = (req, res) => {
 
       const json = JSON.stringify(messages);
       res.status(200).send(json);
-    } catch (error) {
-      res.send(error);
+    } catch (e) {
+      res.send(e);
     }
   });
 };
