@@ -1,3 +1,8 @@
-<li>
-  <%= createdAt %> <%= user %> <%= message %>
+<li class="message">
+  <p class="message__text">
+    <%= message %>
+  </p>
+  <p class="message__info">
+    Added <%= addedAt %> by: <%= user %>
+  </p>
 </li>

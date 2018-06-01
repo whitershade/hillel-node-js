@@ -2,9 +2,9 @@
 
 <h1>Messages</h1>
 
-<a href="/messages/new">Add new message</a>
-<ul class="messages">
-  <% messages.forEach(({ createdAt, user, message }) => { %>
-    <%- include('message', { createdAt, user, message }); %>
+<a class="messages__button-add-new" href="/messages/new">+ Add one more</a>
+<ul class="messages__list">
+  <% messages.forEach(({ addedAt, user, message }) => { %>
+    <%- include('message', { addedAt, user, message }); %>
   <% }); %>
 </ul>

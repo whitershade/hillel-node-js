@@ -1,9 +1,87 @@
+.message {
+  padding: 5px 10px;
+
+  border-left: 1px solid $main-color;
+  border-right: 1px solid $main-color;
+  border-top: 1px solid $main-color;
+
+  &:last-of-type {
+    border-bottom: 1px solid $main-color;
+  }
+
+  &__text,
+  &__info {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__info {
+    text-align: right;
+
+    font-size: 12px;
+    font-style: italic;
+  }
+}
+
+.messages__list,
+.add-new-message-form,
+.messages-json {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .messages {
-  text-align: left;
+  &__list {
+    flex-direction: column;
+
+    width: auto;
+
+    padding: 0;
+
+    list-style-type: none;
+
+    text-align: left;
+
+    border-radius: 3px;
+  }
+
+  &__button-add-new {
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    text-decoration: none;
+
+    color: $main-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .add-new-message-form {
+  text-align: left;
+  font-size: 12px;
+
   &__input {
     width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 0 5px;
   }
+
+  &__button {
+    color: $main-color;
+  }
+}
+
+.messages-json {
+
 }
