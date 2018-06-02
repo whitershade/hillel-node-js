@@ -40,7 +40,7 @@
 
     &:hover {
       &::after {
-        background-color: #339ed4;
+        background-color: $main-bg-color;
       }
     }
   }

@@ -3,11 +3,14 @@ const favicon = require('serve-favicon');
 const path = require('path');
 const sassMiddleware = require('node-sass-middleware');
 const expressLayouts = require('express-ejs-layouts');
+const { clearable } = require('minimist')(process.argv.slice(2));
 
 const router = require('./routes');
 const middlewares = require('./middlewares');
+const clearableOutdatedMessages = require('./utils/clearOutdatedMessages');
 
-// require('./utils/clearOutdatedMessages');
+
+if (clearable) clearableOutdatedMessages();
 
 const app = express();
 app.use(express.json());
