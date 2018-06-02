@@ -1,0 +1,26 @@
+.image {
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__go-back {
+    display: inline-flex;
+    color: $main-color;
+    bottom: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+}
+
+.images {
+  display: grid;
+  align-items: center;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+
+  &__item {
+    max-width: 100%;
+  }
+}

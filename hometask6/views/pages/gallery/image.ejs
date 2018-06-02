@@ -1,0 +1,17 @@
+<%- contentFor('body') %>
+
+<h1 class="image__title">
+  It's a <%= image.replace(/\.[^.]+$/, "") %>!
+</h1>
+
+<a class="image__go-back" href="/images">
+  <=== Go back <===
+</a>
+
+<div class="image">
+  <img class="images__item" src="/assets/images/<%= image %>" />
+</div>
+
+<a class="image__go-back" href="/images">
+  <=== Go back <===
+</a>

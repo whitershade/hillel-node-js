@@ -1,0 +1,11 @@
+<%- contentFor('body') %>
+
+<h1>Images</h1>
+
+<div class="images">
+  <% images.forEach((image) => { %>
+    <a href="/images/<%= image %>">
+      <img class="images__item" src="/assets/images/<%= image %>" />
+    </a>
+  <% }) %>
+</div>
