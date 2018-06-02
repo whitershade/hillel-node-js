@@ -6,7 +6,7 @@ module.exports = (req, res) => {
 
     try {
       const messages = JSON.parse(data);
-      res.render('pages/messages/messages', { messages });
+      res.render('pages/messages/messages', { title: 'Messages', messages });
     } catch (error) {
       res.send(error);
     }

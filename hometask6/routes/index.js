@@ -10,7 +10,7 @@ router.use('/images', images);
 router.use('/messages', messages);
 
 router.get('/', (req, res) => {
-  res.render('pages/home');
+  res.render('pages/home', { title: 'Home' });
 });
 
 router.all('/*', (req, res) => res.sendStatus(404));
