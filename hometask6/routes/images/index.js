@@ -9,7 +9,7 @@ const folder = path.join(__dirname, '..', '..', 'views', 'assets', 'images');
 router
   .get('/', (req, res) => {
     fs.readdir(folder, (err, images) => {
-      res.render('pages/gallery/images', { title: 'Images', images });
+      res.render('pages/gallery/', { title: 'Images', images });
     });
   })
   .get('/:image', (req, res) => {
