@@ -3,6 +3,6 @@
     <%= message %>
   </p>
   <p class="message__info">
-    Added <%= addedAt %> by: <%= user %>
+    Added <%= new Date(addedAt).toLocaleString() %> by: <%= user %>
   </p>
 </li>

@@ -30,7 +30,7 @@
 .messages__list,
 .add-new-message-form,
 .messages-json {
-  max-width: 400px;
+  max-width: 405px;
   margin: 0 auto;
 }
 
@@ -65,23 +65,30 @@
   }
 }
 
-.add-new-message-form {
+.add-new-message-form,
+.messages-json {
   text-align: left;
   font-size: 12px;
 
-  &__input {
-    width: 100%;
+  &__input,
+  &__button {
     height: 30px;
+    width: 100%;
+  }
+
+  &__input {
+    box-sizing: border-box;
     margin-bottom: 10px;
     font-size: 14px;
     padding: 0 5px;
   }
 
   &__button {
-    color: $main-color;
+    margin-top: 10px;
   }
 }
 
-.messages-json {
-
+.json-fieldset {
+  border: 1px solid $main-color;
+  margin-bottom: 10px;
 }

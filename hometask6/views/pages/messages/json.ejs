@@ -1,21 +1,27 @@
 <%- contentFor('body') %>
 
+<h1>Message JSON</h1>
+
 <div class="messages-json">
-  <form type="GET" action='/messages/get-json-messages'>
-    <%- include('json-fieldset', { legend: 'User', name: 'user' }); %>
-    <%- include('json-fieldset', { legend: 'Message', name: 'message' }); %>
-    <%- include('json-fieldset', { legend: 'Show', name: 'show' }); %>
+  <form type="GET" action="/messages/get-json-messages">
+    <p>Filter options</p>
+    <hr />
+    <label>
+      User
+      <input type="text" name="user" class="messages-json__input">
+    </label>
+    <label>
+      Message
+      <input type="text" name="message" class="messages-json__input">
+    </label>
+    <label>
+      Show
+      <input type="text" name="show" value="30" class="messages-json__input">
+    </label>
+    <p>Sort options</p>
+    <hr />
     <%- include('json-fieldset', { legend: 'Added at', name: 'addedAt' }); %>
     <%- include('json-fieldset', { legend: 'End at', name: 'endAt' }); %>
-    <button>Get All Mesages</button>
-  </form>
-
-  <form type="GET" action="/messages/get-json-message">
-    <input type="text" name="user" value="alex">
-    <input type="text" name="message" value="message">
-    <input type="text" name="show" value="30">
-    <input type="text" name="addedAt">
-    <input type="text" name="endAt">
-    <button>Get Message by field</button>
+    <button class="messages-json__button">Get Messages</button>
   </form>
 <div>
