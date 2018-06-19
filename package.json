@@ -13,6 +13,7 @@
     "hometask5": "cross-env nodemon ./hometask5/",
     "hometask6": "cross-env nodemon ./hometask6/",
     "hometask6-clearable": "cross-env nodemon ./hometask6/ --clearable=true",
+    "hometask8": "cross-env nodemon ./hometask8/",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
@@ -25,8 +26,10 @@
     "url": "https://github.com/whitershade/hillel-node-js/issues"
   },
   "nodemonConfig": {
-   "ignore": ["hometask6/data/*.json"]
- },
+    "ignore": [
+      "hometask6/data/*.json"
+    ]
+  },
   "homepage": "https://github.com/whitershade/hillel-node-js#readme",
   "devDependencies": {
     "cross-env": "^5.1.4",
@@ -44,6 +47,7 @@
     "file-type": "^7.6.0",
     "lodash": "^4.17.5",
     "minimist": "^1.2.0",
+    "mongoose": "^5.1.6",
     "node-sass-middleware": "^0.11.0",
     "read-chunk": "^2.1.0",
     "serve-favicon": "^2.5.0"
