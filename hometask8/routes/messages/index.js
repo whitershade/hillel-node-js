@@ -13,6 +13,7 @@ module.exports = router
       username,
       message,
       show,
+      endAt: Date.now() + (show * 1000),
     });
 
     newMessage

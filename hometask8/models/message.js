@@ -1,12 +1,20 @@
 const mongoose = require('../db/mongoose');
 
 
-const Message = mongoose.model('Message', {
+const { Schema } = mongoose;
+
+const MessageSchema = new Schema({
   username: {
     type: String,
     required: true,
     minlength: 3,
     trim: true,
+    validate: {
+      validator(username) {
+        return /^[A-Za-z]*$/.test(username);
+      },
+      message: 'username must use only symbols from latin alphabet',
+    },
   },
   message: {
     type: String,
@@ -21,12 +29,12 @@ const Message = mongoose.model('Message', {
     max: 60,
     required: true,
   },
-  createdAt: {
+  endAt: {
     type: Date,
-    default: Date.now,
-    expires: this.show,
+    required: true,
+    expires: 0,
   },
-});
+}, { timestamps: true });
 
 
-module.exports = Message;
+module.exports = mongoose.model('Message', MessageSchema);
