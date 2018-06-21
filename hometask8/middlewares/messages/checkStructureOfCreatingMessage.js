@@ -13,6 +13,9 @@ module.exports = (req, res, next) => {
     case typeof show !== 'string':
       return res.status(418).json({ message: 'Show must be a string' });
 
+    case !/^[A-Za-z]*$/.test(username):
+      return res.status(418).json({ username: 'Username must use only symbols from latin alphabet' });
+
     case username.length < 3:
       return res.status(418).json({ message: 'Username must has at least 3 symbols' });
 
@@ -20,7 +23,7 @@ module.exports = (req, res, next) => {
       return res.status(418).json({ message: 'Message must has at least 1 symbol' });
 
     case message.length > 512:
-      return res.status(418).json({ message: 'Message mush has less than 512 symbols' });
+      return res.status(418).json({ message: 'Message must has less than 512 symbols' });
 
     case show.length === 0:
       return res.status(418).json({ message: 'Show must be not empty string' });
