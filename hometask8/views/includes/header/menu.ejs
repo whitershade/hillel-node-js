@@ -1,0 +1,11 @@
+<% const links = [
+  { link: '/', text: 'Messages' },
+  { link: '/messages/new', text: 'Add new message' },
+  { link: '/json', text: 'Get Messages JSON' },
+] %>
+
+<menu class="header-menu">
+  <% links.forEach(({ link, text }) => { %>
+    <%- include('menu-item', { link, text }); %>
+  <% }); %>
+</menu>

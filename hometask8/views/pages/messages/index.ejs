@@ -1,0 +1,10 @@
+<%- contentFor('body') %>
+
+<h1>Messages</h1>
+
+<a class="messages__button-add-new" href="/messages/new">+ Add one more</a>
+<ul class="messages__list">
+  <% messages.forEach(({ _id, username, message }) => { %>
+    <%- include('message', { _id, username, message }); %>
+  <% }); %>
+</ul>

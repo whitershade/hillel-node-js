@@ -1,0 +1,28 @@
+<%- contentFor('body') %>
+
+<h1>Message JSON</h1>
+
+<div class="messages-json">
+  <form type="GET" action="/json/get-json">
+    <p>Filter options</p>
+    <hr />
+    <label>
+      User
+      <input type="text" name="username" class="messages-json__input">
+    </label>
+    <label>
+      Message
+      <input type="text" name="message" class="messages-json__input">
+    </label>
+    <label>
+      Show
+      <input type="text" name="show" value="30" class="messages-json__input">
+    </label>
+
+    <p>Sort options</p>
+    <hr />
+    <%- include('json-fieldset', { legend: 'Created at', name: 'createdAt' }); %>
+    <%- include('json-fieldset', { legend: 'End at', name: 'endAt' }); %>
+    <button class="messages-json__button">Get Messages</button>
+  </form>
+<div>
