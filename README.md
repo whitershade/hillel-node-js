@@ -131,5 +131,4 @@ Selecting objects from the database should also be able to sort and filter messa
 ##### How to start
 1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
 1. Install dependencies with `npm i`
-1. To run project use `npm run hometask6`
-1. To run project with enabled deletion of outdated messages use `hometask6-clearable`
+1. To run project use `npm run hometask8`
