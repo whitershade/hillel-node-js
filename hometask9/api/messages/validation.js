@@ -1,5 +1,6 @@
 const Joi = require('joi');
 
+
 exports.addNewMessage = {
   body: {
     username: Joi

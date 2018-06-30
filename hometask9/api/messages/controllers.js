@@ -1,23 +1,18 @@
-const Model = require('./model');
 const { pick, omitBy, isEmpty } = require('lodash');
+
+const Model = require('./model');
+const normalizeMessageField = require('../../utils/normalizeMessageField');
+
 
 const filterOptions = ['username-filter', 'message', 'show'];
 const sortOptions = ['createdAt', 'username-sort'];
-
-const normalize = (object = {}) => { // eslint-disable-line
-  return Object.keys(object).reduce((result, fieldName) => {
-    const [normalizedFieldName] = fieldName.split('-');
-
-    return { ...result, [normalizedFieldName]: object[fieldName] };
-  }, {});
-};
 
 const controllers = {
   getItems: (req, res) => {
     const { query } = req;
 
-    const filter = normalize(omitBy(pick(query, filterOptions), isEmpty));
-    const sort = normalize(omitBy(pick(query, sortOptions), isEmpty));
+    const filter = normalizeMessageField(omitBy(pick(query, filterOptions), isEmpty));
+    const sort = normalizeMessageField(omitBy(pick(query, sortOptions), isEmpty));
 
     const filterByMatch = Object
       .keys(filter)
