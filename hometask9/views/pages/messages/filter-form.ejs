@@ -1,0 +1,21 @@
+<form type="GET" action="/messages/" class="messages-search">
+  <b>Filter by</b>:
+  <label>
+    User
+    <input type="text" name="username-filter" class="messages-search__input">
+  </label>
+  <label>
+    Message
+    <input type="text" name="message" class="messages-search__input">
+  </label>
+
+  <br />
+  <br />
+
+  <b>Sort by</b>:
+  <%- include('sort-fieldset', { legend: 'Created at', name: 'createdAt' }); %>
+  <%- include('sort-fieldset', { legend: 'User', name: 'username-sort' }); %>
+
+  <br />
+  <button class="messages-json__button">Get Messages</button>
+</form>

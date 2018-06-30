@@ -2,39 +2,5 @@
 
 <h1>Messages</h1>
 
-<table class="messages__table">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Message</th>
-      <th>Creation time</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% messages.forEach(({ _id, username, message }) => { %>
-      <%- include('message', { _id, username, message }); %>
-    <% }); %>
-  </tbody>
-</table>
-
-<form type="GET" action="/messages/" class="messages-search">
-  <b>Filter by</b>:
-  <label>
-    User
-    <input type="text" name="username-filter" class="messages-search__input">
-  </label>
-  <label>
-    Message
-    <input type="text" name="message" class="messages-search__input">
-  </label>
-
-  <br />
-  <br />
-
-  <b>Sort by</b>:
-  <%- include('json-fieldset', { legend: 'Created at', name: 'createdAt' }); %>
-  <%- include('json-fieldset', { legend: 'User', name: 'username-sort' }); %>
-
-  <br />
-  <button class="messages-json__button">Get Messages</button>
-</form>
+<%- include('table') %>
+<%- include('filter-form') %>

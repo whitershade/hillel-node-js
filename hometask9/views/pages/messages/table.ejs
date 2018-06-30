@@ -1,0 +1,14 @@
+<table class="messages__table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Message</th>
+      <th>Creation time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% messages.forEach(({ _id, username, message }) => { %>
+      <%- include('message', { _id, username, message }); %>
+    <% }); %>
+  </tbody>
+</table>
