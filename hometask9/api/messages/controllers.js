@@ -22,6 +22,7 @@ const controllers = {
       }), {});
 
     Model
+      .findActiveMessages()
       .find(filterByMatch)
       .sort(sort)
       .then((messages) => {
@@ -46,12 +47,7 @@ const controllers = {
   createItem: (req, res) => {
     const { username, message, show } = req.body;
 
-    const newMessage = new Model({
-      username,
-      message,
-      show,
-      endAt: Date.now() + (show * 1000),
-    });
+    const newMessage = new Model({ username, message, show });
 
     newMessage
       .save()

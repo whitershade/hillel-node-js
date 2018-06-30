@@ -24,17 +24,23 @@ const MessageSchema = new Schema({
     trim: true,
   },
   show: {
-    type: Number,
-    min: 1,
-    max: 60,
-    required: true,
-  },
-  endAt: {
     type: Date,
-    required: true,
-    // expires: 0,
+    expires: 0,
+    index: -1,
   },
 }, { timestamps: true });
+
+MessageSchema.statics = {
+  findActiveMessages() {
+    return this.find({ show: { $gte: new Date() } });
+  },
+};
+
+MessageSchema.pre('save', function preSave() {
+  if (this.isNew) {
+    this.show = new Date(new Date().getTime() + (this.show * 1000));
+  }
+});
 
 
 module.exports = mongoose.model('Message', MessageSchema);
