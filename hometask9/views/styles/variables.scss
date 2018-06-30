@@ -1,0 +1,26 @@
+// TEXT
+$font-family: 'Open Sans', Arial, sans-serif;
+$font-size-default: 14px;
+
+// COLORS
+$color-gray: #707587;
+$color-blue: #2b9dd6;
+$color-dark-blue: #0e6aa0;
+$white-color: #e4e8ed;
+
+$header-bg-color: $color-gray;
+$main-color: $white-color;
+$main-bg-color: $color-blue;
+$footer-bg-color: $color-dark-blue;
+
+// PADDINGS
+$padding-default: 20px;
+
+$section-padding: $padding-default 0;
+$container-padding: 0 $padding-default;
+
+$header-padding: $section-padding;
+$footer-padding: $section-padding;
+
+// WIDTH
+$container-width: 1000px;

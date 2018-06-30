@@ -14,6 +14,7 @@
     "hometask6": "cross-env nodemon ./hometask6/",
     "hometask6-clearable": "cross-env nodemon ./hometask6/ --clearable=true",
     "hometask8": "cross-env nodemon ./hometask8/",
+    "hometask9": "cross-env nodemon ./hometask9/",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {

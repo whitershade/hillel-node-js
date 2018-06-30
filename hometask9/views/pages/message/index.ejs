@@ -1,0 +1,7 @@
+<%- contentFor('body') %>
+
+<h1>Message</h1>
+
+<% Object.keys(message._doc).forEach((messageFieldName) => { %>
+  <%- include('message-item', { fieldName: messageFieldName, fieldValue: message[messageFieldName] }); %>
+<% }); %>
