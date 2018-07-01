@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'header';
+@import 'footer';
+@import 'messages';
+
+body,
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  text-align: center;
+  display: grid;
+
+  margin: 0;
+
+  color: $main-color;
+  background-color: $main-bg-color;
+
+  font-family: $font-family;
+  font-size: $font-size-default;
+
+  grid-template-rows: auto 1fr auto;
+}
+
+.container {
+  max-width: $container-width;
+  padding: $container-padding;
+  margin: 0 auto;
+}
+
+.main {
+  padding: 20px 0;
+}

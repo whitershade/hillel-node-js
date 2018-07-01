@@ -1,0 +1,46 @@
+<%- contentFor('body') %>
+
+<h1>Add new message</h1>
+
+<form
+  method="post"
+  action="/messages"
+  class="add-new-message-form"
+  enctype="application/x-www-form-urlencoded"
+>
+  <label>
+    Name
+    <input
+      required
+      name="username"
+      type="text"
+      class="add-new-message-form__input"
+    >
+  </label>
+
+  <label>
+    Message
+    <input
+      required
+      type="text"
+      name="message"
+      class="add-new-message-form__input"
+    >
+  </label>
+
+  <label>
+    Show
+    <input
+      required
+      min="0"
+      max="60"
+      value="30"
+      step="1"
+      name="show"
+      type="number"
+      class="add-new-message-form__input"
+    >
+  </label>
+
+  <button class="add-new-message-form__button">Send</button>
+</form>
