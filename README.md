@@ -132,3 +132,17 @@ Selecting objects from the database should also be able to sort and filter messa
 1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
 1. Install dependencies with `npm i`
 1. To run project use `npm run hometask8`
+
+### Hometask 9
+Supplement the code written in the lecture with the opportunity:
+- Display the time, name and message in the table
+
+- Make it possible to sort the table by time and user name (sorting must be complemented and the first sorting field should be in priority)
+
+- Make the message "clickable" so that it opens as a separate one with the expanded information (all fields from the database)
+
+
+##### How to start
+1. Clone the project `git clone https://github.com/whitershade/hillel-node-js.git`
+1. Install dependencies with `npm i`
+1. To run project use `npm run hometask9`
