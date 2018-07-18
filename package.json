@@ -15,6 +15,7 @@
     "hometask6-clearable": "cross-env nodemon ./hometask6/ --clearable=true",
     "hometask8": "cross-env nodemon ./hometask8/",
     "hometask9": "cross-env nodemon ./hometask9/",
+    "hometask10": "cross-env nodemon ./hometask10/",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
@@ -40,18 +41,23 @@
     "nodemon": "^1.17.4"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "celebrate": "^8.0.0",
     "chalk": "^2.3.2",
+    "connect-mongodb-session": "^2.0.3",
     "easy-table": "^1.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "express-ejs-layouts": "^2.4.0",
+    "express-session": "^1.15.6",
     "file-type": "^7.6.0",
     "joi": "^13.4.0",
     "lodash": "^4.17.5",
     "minimist": "^1.2.0",
     "mongoose": "^5.1.6",
     "node-sass-middleware": "^0.11.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "read-chunk": "^2.1.0",
     "serve-favicon": "^2.5.0"
   }
