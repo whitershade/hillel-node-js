@@ -8,6 +8,7 @@ const mdl = require('../middlewares');
 const router = Router();
 
 router
+  .get('/me', mdl.isAuth, ctrl.showMe)
   .post('/', mdl.validate(validation.register), ctrl.registerNewUser)
   .post('/login', passport.authenticate('local', {}), ctrl.login);
 

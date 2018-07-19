@@ -16,3 +16,7 @@ exports.registerNewUser = (req, res) => {
 exports.login = (req, res) => {
   res.json(req.session);
 };
+
+exports.showMe = (req, res) => {
+  res.status(200).send(req.user);
+};

@@ -54,6 +54,7 @@ UsersSchema.statics = {
         if (err) return next({ message: err.message });
 
         if (!user) return next({ message: 'email is not correct' });
+
         next(false, user);
       });
   },

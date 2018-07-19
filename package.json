@@ -15,7 +15,7 @@
     "hometask6-clearable": "cross-env nodemon ./hometask6/ --clearable=true",
     "hometask8": "cross-env nodemon ./hometask8/",
     "hometask9": "cross-env nodemon ./hometask9/",
-    "hometask10": "cross-env nodemon ./hometask10/",
+    "hometask10": "concurrently \"cross-env nodemon ./hometask10/\" \"npm run start --prefix ./hometask10/client\"",
     "inspect": "cross-env node --inspect --inspect-brk ./index.js"
   },
   "repository": {
@@ -44,6 +44,7 @@
     "bcryptjs": "^2.4.3",
     "celebrate": "^8.0.0",
     "chalk": "^2.3.2",
+    "concurrently": "^3.6.0",
     "connect-mongodb-session": "^2.0.3",
     "easy-table": "^1.1.1",
     "ejs": "^2.6.1",
