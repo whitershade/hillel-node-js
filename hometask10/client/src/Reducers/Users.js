@@ -14,6 +14,7 @@ export default function (state = initialState, { type, payload }) {
     case types.AUTHENTICATE_USER:
       return { ...state, isAuthenticated: true };
 
+    case types.UNAUTHENTICATE_USER:
     case errorsTypes.AUTHENTICATION_ERROR:
       return { ...state, isAuthenticated: false };
 

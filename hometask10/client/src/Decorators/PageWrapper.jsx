@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Components/Header';
+import Header from '../Containers/Header';
 
 const PageWrapper = (Component) => (props) => (
   <React.Fragment>

@@ -18,6 +18,12 @@ exports.login = (req, res) => {
   res.status(200).send(pick(req.user, ['_id', 'email']));
 };
 
+exports.logout = (req, res) => {
+  req.session.destroy();
+  res.clearCookie('connect.sid');
+  res.sendStatus(200);
+};
+
 exports.showMe = (req, res) => {
   res.status(200).send(req.user);
 };

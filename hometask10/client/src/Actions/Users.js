@@ -6,6 +6,7 @@ import * as types from '../Constants/Users';
 
 
 export const authenticateUser = createAction(types.AUTHENTICATE_USER);
+export const unauthenticateUser = createAction(types.UNAUTHENTICATE_USER);
 
 export const startAddItem = createAction(types.START_ADD_ITEM);
 export const addItem = createAction(types.ADD_ITEM);
@@ -28,6 +29,19 @@ export const login = values => async dispatch => {
 
     dispatch(authenticateUser());
     dispatch(addItem(user));
+
+    dispatch(push('/'));
+  } catch (e) {
+    dispatch(handleError(e));
+  }
+};
+
+export const logout = values => async dispatch => {
+  try {
+    await axios.get('/api/users/logout');
+
+    dispatch(unauthenticateUser());
+    dispatch(addItem({}));
 
     dispatch(push('/'));
   } catch (e) {

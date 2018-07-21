@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const Header = () => (
+const Header = ({ logout }) => (
   <header className="header">
     <nav>
       <ul>
@@ -14,6 +14,9 @@ const Header = () => (
         </li>
         <li>
           <Link to="/login">Login</Link>
+        </li>
+        <li onClick={ logout }>
+          logout
         </li>
       </ul>
     </nav>

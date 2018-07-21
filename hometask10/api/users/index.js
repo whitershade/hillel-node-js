@@ -10,6 +10,7 @@ const router = Router();
 router
   .get('/me', mdl.isAuth, ctrl.showMe)
   .post('/', mdl.validate(validation.register), ctrl.registerNewUser)
+  .get('/logout', mdl.isAuth, ctrl.logout)
   .post('/login', passport.authenticate('local', {}), ctrl.login);
 
 
