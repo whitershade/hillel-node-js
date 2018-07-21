@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { push } from 'react-router-redux'
 import { createAction } from 'redux-actions';
+import Notifications from 'react-notification-system-redux';
 import { handleError } from './Errors';
 import * as types from '../Constants/Users';
 
@@ -18,6 +19,10 @@ export const createItem = values => async dispatch => {
     await axios.post('/api/users', values);
 
     dispatch(push('/login'));
+    dispatch(Notifications.success({
+      title: 'Success, you have been registered',
+      message: 'now login please', position: 'tc'
+    }));
   } catch (e) {
     dispatch(handleError(e));
   }
@@ -43,6 +48,10 @@ export const logout = values => async dispatch => {
     dispatch(unauthenticateUser());
     dispatch(addItem({}));
 
+    dispatch(Notifications.success({
+      title: 'Success',
+      message: 'you have been logged out', position: 'tc'
+    }));
     dispatch(push('/'));
   } catch (e) {
     dispatch(handleError(e));

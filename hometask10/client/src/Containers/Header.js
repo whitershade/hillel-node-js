@@ -3,9 +3,13 @@ import { logout } from '../Actions/Users';
 import Component from '../Components/Header';
 
 
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.user.isAuthenticated
+})
+
 const mapDispatchToProps = dispatch => ({
-  logout: values => dispatch(logout(values)),
+  logout: values => dispatch(logout(values))
 });
 
 
-export default connect(null, mapDispatchToProps)(Component);
+export default connect(mapStateToProps, mapDispatchToProps)(Component);
