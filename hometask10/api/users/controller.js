@@ -1,7 +1,8 @@
+const { pick } = require('lodash');
 const UsersModel = require('./model').model;
 
 exports.registerNewUser = (req, res) => {
-  UsersModel.create(req.body, (err, user) => {
+  UsersModel.create(req.body, (err) => {
     if (err) {
       if (err.code === 11000) {
         return res.status(400).send({ message: 'email already registered' });
@@ -9,12 +10,12 @@ exports.registerNewUser = (req, res) => {
       return res.status(400).send({ message: err.message });
     }
 
-    res.send(user);
+    return res.sendStatus(200);
   });
 };
 
 exports.login = (req, res) => {
-  res.json(req.session);
+  res.status(200).send(pick(req.user, ['_id', 'email']));
 };
 
 exports.showMe = (req, res) => {

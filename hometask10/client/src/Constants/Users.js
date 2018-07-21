@@ -1,0 +1,5 @@
+export const AUTHENTICATE_USER = '@USERS/AUTHENTICATE';
+
+export const START_ADD_ITEM = '@USERS/START_ADD_ITEM';
+export const ADD_ITEM = '@USERS/ADD_ITEM';
+export const ADD_ITEM_ERROR = '@USERS/ADD_ITEM_ERROR';
